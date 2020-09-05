@@ -1,2 +1,2 @@
-# DnD
-Library for DnD in `Python`
+# pynd
+Library for D&D in `Python`
