@@ -1,5 +1,7 @@
 from pynd.dobject.dobject import Dobject
 
+from pynd.dice.dice import *
+
 
 class Character(Dobject):
     CONFIG = {
@@ -51,5 +53,37 @@ class Character(Dobject):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-    def set_language_default_to_race(self):
+    # Set default method
+
+    def set_default_all(self):
+        self.set_default_to_class()
+        self.set_default_to_race()
+
+    def set_default_to_race(self):
+        self.set_default_language_to_race()
+        self.set_default_height_to_race()
+        self.set_default_weight_to_race()
+
+    def set_default_to_class(self):
+        self.set_default_abilities()
+
+    def set_default_language_to_race(self):
         pass
+
+    def set_default_height_to_race(self):
+        pass
+
+    def set_default_weight_to_race(self):
+        pass
+
+    def set_default_abilities(self):
+        pass
+
+
+class PlayableCharacter(Character):
+    CONFIG = {
+        "Playable": True,
+    }
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)

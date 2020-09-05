@@ -7,6 +7,10 @@ from pynd.dobject.dobject import Dobject
 # wants to classify everything according to modern taxonomy. Have fun!
 
 
-class race(Dobject):
-    def __init__(self):
-        pass
+class Race(Dobject):
+    CONFIG = {
+
+    }
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)

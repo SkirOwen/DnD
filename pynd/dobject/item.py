@@ -7,7 +7,7 @@ class Item(Dobject):
     }
 
     def __init__(self, **kwargs):
-        pass
+        super().__init__(**kwargs)
 
 
 class Ammunition(Item):
@@ -16,8 +16,8 @@ class Ammunition(Item):
     }
 
     def __init__(self, **kwargs):
-        pass
+        super().__init__(**kwargs)
 
-    def use(self, ammo_left, ammo_used):
-        ammo_left -= ammo_used
-        return ammo_left
+    def use(self, ammo_current, ammo_used):
+        ammo_current -= ammo_used
+        return ammo_current
