@@ -4,7 +4,7 @@ from numpy.random import randint
 class Die(object):
     # lagged_start as option to see each roll appear one
     # after the other?
-    def __int__(self, D=6, roll_nbr=1):
+    def __init__(self, D=6, roll_nbr=1):
         self.D = D
         self.roll_nbr = roll_nbr
 
