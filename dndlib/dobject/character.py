@@ -62,7 +62,7 @@ class Character(Dobject):
     }
 
     def __init__(self, **kwargs):
-        pass
+        super().__init__(**kwargs)
 
     def set_language_default_to_race(self):
         pass
