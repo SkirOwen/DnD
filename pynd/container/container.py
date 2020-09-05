@@ -1,4 +1,4 @@
-from dndlib.utils.config_ops import digest_config
+from pynd.utils.config_ops import digest_config
 
 
 class Container(object):

@@ -60,7 +60,7 @@ def merge_dicts_recursively(*dicts):
     all_items = it.chain(*[d.items() for d in dicts])
     for key, value in all_items:
         if key in result and isinstance(result[key], dict) and isinstance(value, dict):
-          result[key] = merge_dicts_recursively(result[key], value)
+            result[key] = merge_dicts_recursively(result[key], value)
         else:
             result[key] = value
     return result
@@ -84,6 +84,7 @@ def digest_locals(obj, keys=None):
         keys = list(caller_locals.keys())
     for key in keys:
         setattr(obj, key, caller_locals[key])
+
 
 # Occasionally convenient in order to write dict.x instead of more laborious
 # (and less in keeping with all other attr accesses) dict["x"]

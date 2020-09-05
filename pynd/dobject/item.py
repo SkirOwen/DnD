@@ -1,10 +1,11 @@
-from dndlib.dobject.dobject import Dobject
+from pynd.dobject.dobject import Dobject
 
 
 class Item(Dobject):
     CONFIG = {
         "Consumable": False,
     }
+
     def __init__(self, **kwargs):
         pass
 
