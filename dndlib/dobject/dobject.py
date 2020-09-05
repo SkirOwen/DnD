@@ -14,7 +14,7 @@ from dndlib.container.container import Container
 
 class Dobject(Container):
     CONFIG = {
-        "name": None,
+        "Name": None,
     }
 
     def __init__(self, **kwargs):

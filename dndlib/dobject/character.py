@@ -17,5 +17,26 @@ from dndlib.dobject.dobject import Dobject
 
 
 class Character(Dobject):
+    CONFIG = {
+        "Playable": False,
+        "Race": None,
+        "Class": None,
+        "Name": None,
+        "Age": None,
+        "Gender": None,
+        "Level": 1,
+        "Experience": 0,
+        "HP": None,
+        "CA": None,
+        "Abilities": {
+            "Strength": 0,
+            "Dexterity": 0,
+            "Constitution": 0,
+            "Intelligence": 0,
+            "Wisdom": 0,
+            "Charisma": 0,
+        },
+    }
+
     def __init__(self, **kwargs):
-        Container.__init__(self, **kwargs)
+        pass
