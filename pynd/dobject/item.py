@@ -10,6 +10,7 @@ class Item(Dobject):
         super().__init__(**kwargs)
 
 
+# Maybe do a file for that?
 class Ammunition(Item):
     CONFIG = {
         "Consumable": True,

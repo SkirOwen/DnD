@@ -3,12 +3,12 @@ from pynd.container.container import Container
 
 class Dobject(Container):
     CONFIG = {
-        "Name": None,
+        "name": None,
     }
 
     def __init__(self, **kwargs):
         Container.__init__(self, **kwargs)
-        self.subdobject = []
+        self.subdobjects = []
         if self.name is None:
             self.name = self.__class__.__name__
 
