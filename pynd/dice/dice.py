@@ -17,7 +17,13 @@ class Die(object):
 # Maybe too complicated
 # But maybe nice to have a object for that?
 
-# class Dice(Die):
+
+class Dice(Die):
+    def __init__(self, *dice, **kwargs):
+        if not all([isinstance(d, Die) for d in dice]):
+            raise Exception("All subdice must be of type Die")
+        Die.__init__(self, **kwargs)
+        self.add(*dice)
 #     def __str__(self, *dice, **kwargs):
 #         if not all([isinstance(d, Die) for d in dice]):
 #             raise Exception("All dice must be of type Die")
