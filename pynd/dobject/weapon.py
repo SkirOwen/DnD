@@ -5,6 +5,8 @@ class Weapon(Dobject):
     CONFIG = {
         "use_ammo": False,
         "ranged": False,
+        "damage_type": None,
+        "atk_bonus": 0,
     }
 
     def __init__(self, **kwargs):
@@ -26,5 +28,5 @@ class Bow(Weapon):
         "ammo_type": None,
     }
 
-    def __init__(self, weapon, **kwargs):
-        Weapon.__init__(self, **kwargs)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)

@@ -1,3 +1,17 @@
+Str = "strength"
+Dex = "dexterity"
+Con = "constitution"
+Int = "intelligence"
+Wis = "wisdom"
+Cha = "charisma"
+
+
+CP = 1
+SP = 10 * CP
+EP = 5 * SP
+GP = 2 * EP
+PP = 10 * GP
+
 LEVELING_TABLE = {
     1: 300,
     2: 900,

@@ -3,7 +3,7 @@ from pynd.dobject.dobject import Dobject
 
 class Item(Dobject):
     CONFIG = {
-        "Consumable": False,
+        "consumable": False,
     }
 
     def __init__(self, **kwargs):
@@ -13,7 +13,7 @@ class Item(Dobject):
 # Maybe do a file for that?
 class Ammunition(Item):
     CONFIG = {
-        "Consumable": True,
+        "consumable": True,
     }
 
     def __init__(self, **kwargs):

@@ -8,6 +8,7 @@ from pynd.dice.dice import *
 class Character(Dobject):
     CONFIG = {
         "playable": False,
+        "player_name": None,
         "race": None,
         "class": None,
         "name": None,
@@ -20,6 +21,7 @@ class Character(Dobject):
         "unconscious": False,
         "hp": None,
         "ac": None,
+        "proficiency_bonus": 0,
         "abilities": {
             "strength": 0,
             "dexterity": 0,
@@ -27,6 +29,14 @@ class Character(Dobject):
             "intelligence": 0,
             "wisdom": 0,
             "charisma": 0,
+        },
+        "perception": 0,
+        "coins": {
+            "copper": 0,
+            "silver": 0,
+            "electrum": 0,
+            "gold" : 0,
+            "platinum": 0,
         },
         # TODO: test if I can overwrite those
         "language": {
@@ -146,5 +156,5 @@ class PlayableCharacter(Character):
         "Playable": True,
     }
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, character, **kwargs):
+        Character.__init__(self, **kwargs)

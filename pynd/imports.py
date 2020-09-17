@@ -11,6 +11,8 @@ from pynd.dobject.spell import *
 from pynd.dobject.weapon import *
 
 from pynd.utils.config_ops import *
+from pynd.utils.iterables import *
+from pynd.utils.simple_functions import *
 from pynd.utils.strings import *
 
 import inspect
