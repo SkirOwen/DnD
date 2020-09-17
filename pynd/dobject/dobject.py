@@ -16,7 +16,6 @@ from pynd.utils.iterables import remove_list_redundancies
 from pynd.utils.simple_functions import get_parameters
 
 
-
 class Dobject(Container):
     CONFIG = {
         "name": None,
