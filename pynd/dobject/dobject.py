@@ -1,4 +1,20 @@
+from functools import reduce
+import copy
+import itertools as it
+import operator as op
+import os
+import random
+import sys
+
+import numpy as np
+
+import pynd.constants as consts
+from pynd.constants import *
 from pynd.container.container import Container
+from pynd.utils.iterables import list_update
+from pynd.utils.iterables import remove_list_redundancies
+from pynd.utils.simple_functions import get_parameters
+
 
 
 class Dobject(Container):
@@ -14,6 +30,32 @@ class Dobject(Container):
 
     def __str__(self):
         return str(self.name)
+
+    def add(self, *dobjects):
+        if self in dobjects:
+            raise Exception("Dobject cannot contain self")
+        self.subdobjects = list_update(self.subdobjects, dobjects)
+        return self
+
+    def add_to_back(self, *dobjects):
+        self.remove(*dobjects)
+        self.subdobjects = list(dobjects) + self.subdobjects
+        return self
+
+    def remove(self, *dobjects):
+        for dobject in dobjects:
+            if dobject in self.subdobjects:
+                self.subdobjects.remove(dobject)
+        return self
+
+    def digest_dobject_attrs(self):
+        """
+        Ensures all attributes which are dobjects are included
+        in the subdobjects list.
+        """
+        dobject_attrs = [x for x in list(self.__dict__.values()) if isinstance(x, Dobject)]
+        self.subdobjects = list_update(self.subdobjects, dobject_attrs)
+        return self
 
     # # Display
     #
@@ -66,8 +108,8 @@ class Dobject(Container):
 
 
 class Group(Dobject):
-    def __init__(self, *dobject, **kwargs):
-        if not all([isinstance(d, Dobject) for d in dobject]):
+    def __init__(self, *dobjects, **kwargs):
+        if not all([isinstance(d, Dobject) for d in dobjects]):
             raise Exception("All subdojects must be of type Dobject")
         Dobject.__init__(self, **kwargs)
-        self.add(*dobject)
+        self.add(*dobjects)

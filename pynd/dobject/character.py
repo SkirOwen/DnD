@@ -17,6 +17,7 @@ class Character(Dobject):
         "gender": None,
         "level": 1,
         "experience": 0,
+        "unconscious": False,
         "hp": None,
         "ac": None,
         "abilities": {
@@ -70,6 +71,19 @@ class Character(Dobject):
 
     def level_up(self):
         self.level += 1
+        return self
+
+    # Damage and Healing
+
+    def receive_damage(self, damage):
+        self.hp -= damage
+        if self.hp <= 0:
+            self.hp = 0
+            self.unconscious = True
+        return self
+
+    def heal(self, healing):
+        self.hp += healing
         return self
 
     # Set default method
