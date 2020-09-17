@@ -7,6 +7,7 @@ class Weapon(Dobject):
         "ranged": False,
         "damage_type": None,
         "atk_bonus": 0,
+        "material": "Fe",
     }
 
     def __init__(self, **kwargs):
