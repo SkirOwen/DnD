@@ -7,11 +7,11 @@ from pynd.dice.dice import *
 
 class Character(Dobject):
     CONFIG = {
-        "playable": False,
+        "name": None,
         "player_name": None,
+        "playable": False,
         "race": None,
         "class": None,
-        "name": None,
         "age": None,
         "height": None,
         "weight": None,
