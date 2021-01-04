@@ -82,3 +82,7 @@ def binary_search(function,
         else:
             return None
     return mh
+
+
+def remap(array, min_val, max_val):
+    return [(((item - min(array) * (max_val - min_val)) / (max(array) - min(array)) + min_val for item in array]
